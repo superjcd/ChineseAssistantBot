@@ -1,0 +1,99 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_for_subscribe
+  - subscribe_information
+  - feedback
+  - call_taxi
+  - out_of_scope
+  - go_somewhere
+
+entities:
+  - name
+  - email
+  - location
+
+slots:
+  email:
+    type: unfeaturized
+  location:
+    type: unfeaturized
+  feedback_value:
+    type: categorical
+    values:
+    - positive
+    - negative
+
+responses:
+  utter_greet:
+  - text: "你好啊"
+
+  utter_cheer_up:
+  - text: "给你看一张有趣的图片"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "我给你讲一个笑话吧: 前几天出去办事，下了出租车发现手机掉车上了，在雨中追了好长一截大喊：师傅等等，师傅等等！师傅停车了。这时发现手机拿在手上
+  于是对师傅说：下雨天路滑，您慢点开啊。
+  师傅：…………"
+
+  utter_did_that_help:
+  - text: "这能帮助你吗？"
+
+  utter_happy:
+  - text: "太好了， 加油！"
+
+  utter_goodbye:
+  - text: "再见"
+  - text: "拜拜"
+
+  utter_iamabot:
+  - text: "我是机器人RASA"
+
+  utter_confirm_email:
+  - text: "您的eamil: {email}？ ok, 您的订阅请求我们收到了， 您将会收到我们的最新消息 "
+
+  utter_ask_location:
+  - text: "请问您要去哪里？"
+  
+  # utter_confirm_location:
+  # - text: "您的目的地是: {location} ."
+
+  utter_confirm_taxicall:
+  - text: "您的目的地是: {location} . 已经为您呼叫了最近的司机， 请您耐心等待"
+
+  utter_can_do:
+  - text: "好的， 非常感谢"
+
+  utter_ask_email:  # 配合form的
+  - text: "请告诉我您的邮件地址"
+
+  utter_ask_feedback:
+    - buttons:
+      - payload: /feedback{"feedback_value":"positive"}
+        title: 👍
+      - payload: /feedback{"feedback_value":"negative"}
+        title: 👎
+      text: 您觉的我们的服务有帮到你吗？
+  
+  utter_improve:
+  - text: "好的， 我们会改进的"
+
+  utter_out_of_scope:
+    - text: 不好意思， 我们暂时不提供该服务
+
+
+forms:
+  - subscribe_form
+
+actions:
+  - call_taxi_action
+  - respond_out_of_scope
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
