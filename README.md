@@ -1,10 +1,10 @@
 <h1 align="center">Chinese conversational assistant robot</h1>
 <p align="center">
-  <a href="#overview">Overview</a> 
-  <a href="#features">Features</a>
-  <a href="#howto">How to</a>
-  <a href="#underthehood">Under the hood</a>
-  <a href="#todo">ToDo</a>
+  <a href="#overview">Overview</a> •
+  <a href="#features">Features</a> •
+  <a href="#howto">How to</a> •
+  <a href="#underthehood">Under the hood</a> •
+  <a href="#todo">ToDo</a> •
 </p>
 
 <p align="center"><img src="materials/conversation.gif?raw=true"/></p>
@@ -61,7 +61,7 @@ So the `sad scenario` has three certain stages to interacte with our users, fell
 Often , the robot need to extract some imformation pieces to complete a certain mission, let's say you wanna call a taxi, then the robot need to know where  you wanna go.  There're to ways to achieve that:
 - Slotting filling by asking user some questions until all slots being filled.
 - Also ask the user some questions, but use a NER service to extract informations.
-Here we use the scond method. Rasa allow us to write custom [NLU Components](https://rasa.com/docs/rasa/api/custom-nlu-components/), here I call a bert-ner api service to extract neccessary informations for me, which is locations here. You can check this [repositry](https://github.com/superjcd/fst2) to easily train and build your own ner models here
+Here we use the scond method. Rasa allow us to write custom [NLU Components](https://rasa.com/docs/rasa/api/custom-nlu-components), here I call a bert-ner api service to extract neccessary informations for me, which is locations here. You can check this [repositry](https://github.com/superjcd/fst2) to easily train and build your own ner models here
 
 ### Make actions
 After knowing the intent of our user, and got neccessay information, the robot then can actually do some staff for us. But here, for simplicty, I just let the robot reponde without doint anything, but you can write your own [actions](https://rasa.com/docs/rasa/core/actions/#).
