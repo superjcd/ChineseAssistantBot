@@ -9,6 +9,7 @@
 
 <p align="center"><img src="materials/conversation.gif?raw=true"/></p>
 <h2 align="center">Overview</h2>
+
 **RASA** may be the best open source to help people build their own auotomatic assitant robot. Here,  I will show you how to build a very basic chat robot that handle multiple tasks with rasa.
 
 
@@ -19,15 +20,19 @@
 
 <h2 align="center">How to</h2>
 Frist, clone the reposity and download dependeices:
-```shell
+
+```bash
   pip install -r requirements.txt
 ```
-Then, train our model
-```shell
+Then, train your model
+
+```bash
   rasa train
 ```
+
 Ok, here you go
-```shell
+
+```bash
   rasa shell
 ```
 
